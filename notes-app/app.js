@@ -1,5 +1,8 @@
+const validator = require('chalk')
 const notes = require('./notes.js')
 
-const printnotes = notes()
+const command = process.argv[2]
 
-console.log(printnotes)
+if(command === 'add') {
+    console.log('Adding note')
+}
