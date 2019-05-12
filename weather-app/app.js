@@ -1,36 +1,7 @@
-console.log('starting')
+const request = require('request')
 
-setTimeout(() => {
-    console.log('2 second timer')
-}, 2000)
+const url = 'https://api.darksky.net/forecast/ddb7333ef809753d00ef99196470edcf/37.8267,-122.4233'
 
-setTimeout(() => {
-    console.log('0 second timer')
-}, 0)
-console.log('stopping')
-
-
-////
-const geocode = require('./utils/geocode')
-const forecast = require('./utils/forecast')
-
-const address = process.argv[2]
-
-if (!address) {
-    console.log('Please provide an address')
-} else {
-    geocode(address, (error, { latitude, longitude, location }) => {
-        if (error) {
-            return console.log(error)
-        }
-
-        forecast(latitude, longitude, (error, forecastData) => {
-            if (error) {
-                return console.log(error)
-            }
-
-            console.log(location)
-            console.log(forecastData)
-        })
-    })
-}
+request({ url : url}, (error, response) => {
+    console.log(response)
+})
