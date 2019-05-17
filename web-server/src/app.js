@@ -50,7 +50,10 @@ app.get('/help/*', (req, res) => {
 })
 
 app.get('*', (req, res) => {
-    res.send('My 404 Page')
+    res.render(404, (req, res) => {
+        title: '404',
+        errorMessage: 'Page not found.'
+    })
 })
 
 app.listen(3000, () => {
