@@ -7,7 +7,8 @@ const publicDirectory = path.join(__dirname, '../public')
 app.use(express.static(publicDirectory))
 
 app.get('/weather', (req, res) => {
-    res.send ({forecast: 'Forecast',
+    res.send ({
+        forecast: 'Forecast',
         location: 'Location'
     })
 })
