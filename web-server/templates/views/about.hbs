@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-            <link rel="stylesheet" href="/css/styles.css">
+        <title>About</title>
+        <link rel="icon" href="/img/weather.png">
+        <link rel="stylesheet" href="/css/styles.css">
     </head>
 
     <body>
-        {{>header}}
-        <h2>{{name}}</h2>
-        <img src="/img/my.jpg">
+        <div class="main-content">
+            {{>header}}
+            <h2>{{name}}</h2>
+            <img class="portrait" src="/img/my.jpg">
+        </div>
         {{>footer}}
     </body>
 </html>
