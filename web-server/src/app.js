@@ -38,10 +38,31 @@ app.get('/help', (req, res) => {
         name: 'Priyanshu Tyagi'
     })
 })
+
 app.get('/weather', (req, res) => {
+    if(!req.query.address) {
+        return res.send({
+            error: 'You must provide an address!'
+        })
+    }
+
     res.send ({
-        forecast: 'Forecast',
-        location: 'Location'
+        forecast: 'It is sunny',
+        location: 'New Delhi',
+        address: req.query.address
+    })
+})
+
+app.get('/products', (req, res) => {
+    if(!req.query.search) {
+        return res.send({
+            error: 'You must provide a search term!'            
+        })
+    }
+
+    console.log(req.query.search)
+    res.send({
+        products: []
     })
 })
 
